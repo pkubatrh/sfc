@@ -11,7 +11,7 @@ struct args {
     std::ifstream f;
     bool fflag;
     bool wolfram;
-    int rmax;
+    float rmax;
 };
 
 struct hidden_neuron {
@@ -64,6 +64,16 @@ void read_vector(std::vector<int> *vect, int vector_len) {
     }
 }
 
+void print_help () {
+    const char *text =
+      " xkubat11 -f filename [-wh] [-r radius]\n"
+      "    -f : name of the input file\n"
+      "    -r : max radius, default=3\n"
+      "    -w : print plotting for WolframAlpha (2D only)\n"
+      "    -h : help screen";
+      std::cout << text << std::endl;
+}
+
 int main(int argc, char **argv)
 {
     args a;
@@ -76,7 +86,7 @@ int main(int argc, char **argv)
     a.rmax = 3;
     a.wolfram = false;
     a.fflag = false;
-    while ((c = getopt (argc, argv, "wr:f:")) != -1) {
+    while ((c = getopt (argc, argv, "hwr:f:")) != -1) {
         switch(c) {
             case 'r':
                 a.rmax = atoi(optarg);
@@ -88,7 +98,14 @@ int main(int argc, char **argv)
             case 'w':
                 a.wolfram = true;
                 break;
+            case 'h':
+                print_help();
+                exit(1);
             case '?':
+                print_help();
+                exit(1);
+            default:
+                print_help();
                 exit(1);
         }
     };
