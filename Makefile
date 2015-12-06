@@ -1,5 +1,5 @@
 main:
-	g++ --std=c++11 main.cpp -o xkubat11
+	g++ --std=c++11 src/main.cpp -o xkubat11
 
 clean:
-	rm *.out xkubat11
+	rm xkubat11
