@@ -1,0 +1,4 @@
+set pointsize 3
+plot "< awk '{if($3 == \"red\") print}' input" u 1:2 t "red" w p pt 2, \
+     "< awk '{if($3 == \"green\") print}' input" u 1:2 t "green" w p pt 2, \
+     "< awk '{if($3 == \"blue\") print}' input" u 1:2 t "blue" w p pt 2

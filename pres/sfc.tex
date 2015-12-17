@@ -1,0 +1,91 @@
+\documentclass{beamer}
+\mode<presentation>
+\usepackage[czech]{babel}
+\usepackage[latin2]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{picture}
+
+\usetheme{Madrid}
+
+\subtitle{Projekt do pøedmìtu SFC}
+\title{Demonstrace uèení sítì RCE}
+\author{Petr Kubát, xkubat11}
+\institute[FIT VUT] {FIT VUT Brno}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\section{Detaily projektu}
+\begin{frame}
+	\frametitle{Detaily projektu:}
+	\begin{itemize}
+		\item Implementaèní jazyk: C++
+		\item Algoritmus pøevzatý z pøedná¹ek
+		\item Textový vstup (soubor) i výstup
+		\item Jednoduchý klasifikátor po nauèení
+	\end{itemize}
+\end{frame}
+
+\section{Vstupní data}
+\begin{frame}
+	\frametitle{Vstupní data}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item Vstup ze souboru
+                \item N-rozmìrný vektor a tøída
+                \item Vektory zpracovávány postupnì, nenáhodnì
+                \item Max. polomìr pomocí argumentu -r
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{block}{Dvourozmìrné vektory}
+                \begin{columns}[totalwidth=\textwidth]
+                    \begin{column}{0.5\textwidth}
+                        \centering
+                        \fontsize{9}{9}\selectfont
+                        1 0 0 \\
+                        2 0 0 \\
+                        3 0 1\\
+                        2 1 0\\
+                        6 0 1\\
+                        7 0 1\\
+                        1 8 2\\
+                        2 8 2
+                    \end{column}
+                    \begin{column}{0.5\textwidth}
+                        \includegraphics[scale=0.25]{input.png}
+                    \end{column}
+                \end{columns}
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{Výstup}
+\begin{frame}\frametitle{Výstup aplikace}
+\begin{center}
+    \fontsize{9}{9}\selectfont
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            Uèení sítì \\
+            \includegraphics[scale=0.25]{output_learning.png}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            Výsledná sí» \\
+            \includegraphics[scale=0.25]{output_link.png} \\
+            Vizualizace výsledku \\
+            \includegraphics[scale=0.25]{output_grafic.png}
+        \end{column}
+    \end{columns}
+\end{center}
+\end{frame}
+
+
+
+\end{document}

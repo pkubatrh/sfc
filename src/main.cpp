@@ -134,7 +134,7 @@ int main(int argc, char **argv)
             bool hit = false;
             std::cout << std::endl << "Vector: ";
             print_vector(&v[i][0], vector_len);
-            std::cout << ", class: " << v[i][vector_len+1] << std::endl;
+            std::cout << ", class: " << v[i][vector_len] << std::endl;
             std::cout << "Comparing existing neurons to the vector" << std::endl;
             for (int j=0; j<net.size(); j++) {
                 float distance = dist(&v[i][0], net[j].pv, vector_len);
